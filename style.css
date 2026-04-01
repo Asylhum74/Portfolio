@@ -11,7 +11,7 @@ body, html {margin: 0; font-family: Arial, sans-serif; }
   max-height: 150px;
 }
 .btn-contact {display: inline-block; padding: 15px 35px; background-color: #C4C4C4; color: #3B3B3B; font-weight: bold; text-decoration: none;
-    position: absolute; right: 20px; transform: translateY(-80%) 
+    position: absolute; right: 20px; transform: translateY(-100%) 
 }
 /* TITRE */
 .section-header {text-align: center; margin-bottom: 60px; }
