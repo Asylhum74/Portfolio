@@ -66,13 +66,6 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
     margin-top: 10px;
 }
 
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
 
 /* Card formulaire */
 .step-slider {
@@ -80,7 +73,6 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
     overflow-x: auto; /* Active le scroll horizontal */
     gap: 20px;
     padding-bottom: 15px;
-    /* Pour un défilement fluide sur mobile */
     scroll-snap-type: x mandatory; 
     scrollbar-width: thin; /* Pour Firefox */
 }
@@ -107,9 +99,8 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 
 .img-full {
     width: 100%;
-    height: auto; /* On laisse l'image prendre sa hauteur naturelle */
-    max-height: 350px; /* On évite quand même qu'elle soit trop géante */
-    object-fit: contain; /* L'image entière est visible sans être coupée */
+    height: auto; 
+    object-fit: contain; 
     border-radius: 5px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
