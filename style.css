@@ -70,12 +70,18 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 /* Card formulaire */
 .step-slider {
     display: flex;
-    overflow-x: auto; /* Active le scroll horizontal */
+    overflow-x: auto;
     gap: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 20px; 
     scroll-snap-type: x mandatory; 
-    scrollbar-width: thin; /* Pour Firefox */
+    scrollbar-width: thin;
     align-items: flex-start;
+}
+
+.detail-card {
+    height: auto !important; /* Force la carte à s'agrandir */
+    min-height: 400px; 
+    display: block !important; /* On enlève le flex du parent pour laisser respirer le contenu */
 }
 
 /* Personnalisation de la barre de défilement (Chrome/Safari) */
@@ -99,10 +105,12 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 }
 
 .img-full {
-    width: 100%; /* Prend toute la largeur de la carte .step */
-    height: auto; /* CALCULE LA HAUTEUR PROPORTIONNELLEMENT */
-    flex-shrink: 0; /* Interdiction de réduire la hauteur */
+    width: 100%; 
+    height: auto !important; /* Le !important force le ratio naturel */
+    max-height: none !important; /* On enlève toute limite de hauteur */
+    display: block;
     object-fit: contain; 
+    flex-shrink: 0;
 }
 
 .step-badge {
