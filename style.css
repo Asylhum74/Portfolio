@@ -68,14 +68,6 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 
 
 /* Card formulaire */
-/* Le conteneur blanc (la carte de la grille) */
-.detail-card {
-    height: auto !important;
-    min-height: 500px;
-    display: block !important; /* On casse le flex du parent pour libérer la hauteur */
-    overflow: hidden;
-}
-
 /* Le bandeau de défilement */
 .step-slider {
     display: flex !important;
