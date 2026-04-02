@@ -45,15 +45,67 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 .service { flex: 1; min-width: 250px; padding: 20px; }
 .service .icon { font-size: 3rem; margin-bottom: 20px; }
 
+
 /*Page site vitrine*/
-.site-vitrine h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
-.site-vitrine h2 span { color: var(--primary); }
-.formulaire-img {
-    flex: 1; max-height: 600px; max-width: 600px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+.container {
+    padding: 50px 10%;
+    background: var(--light);
 }
-.card-content-vitrine { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px;  }
-.card-img-formulaire {
-    padding: 20px;
+
+.project-header {
+    height: 40vh !important; /* Moins haut que la page d'accueil */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/bg-resto.jpg');
+    background-size: cover;
+    color: white;
+}
+
+/* La grille spécifique : 2 colonnes forcées */
+.grid-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+}
+
+/* Style pour la liste de fonctionnalités */
+.features-list {
+    list-style: none;
+    margin-top: 15px;
+}
+.features-list li {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Mise en avant de la dernière carte */
+.highlight-card {
+    background: var(--dark) !important;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlight-card h3 { color: var(--primary); }
+
+.small-text {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Responsive : Tout en 1 colonne sur mobile */
+@media (max-width: 900px) {
+    .grid-details {
+        grid-template-columns: 1fr;
+    }
 }
 
 
