@@ -102,51 +102,60 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
     border: 1px solid #ddd;
 }
 /* Galerie interne à la carte */
-.step-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
-    gap: 15px;
-    margin-top: 20px;
+.step-slider {
+    display: flex;
+    overflow-x: auto; /* Active le scroll horizontal */
+    gap: 20px;
+    padding-bottom: 15px;
+    /* Pour un défilement fluide sur mobile */
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: thin; /* Pour Firefox */
 }
 
+/* Personnalisation de la barre de défilement (Chrome/Safari) */
+.step-slider::-webkit-scrollbar {
+    height: 6px;
+}
+.step-slider::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* Chaque étape prend 85% de la largeur de la carte */
 .step {
-    text-align: center;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
+    flex: 0 0 85%; 
+    scroll-snap-align: center;
+    background: #fff;
     border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.img-full {
+    width: 100%;
+    height: auto; /* On laisse l'image prendre sa hauteur naturelle */
+    max-height: 350px; /* On évite quand même qu'elle soit trop géante */
+    object-fit: contain; /* L'image entière est visible sans être coupée */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .step-badge {
     display: inline-block;
-    font-size: 0.7rem;
-    font-weight: bold;
+    margin-bottom: 15px;
     background: var(--primary);
     color: white;
-    padding: 2px 8px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.img-step {
-    width: 100%;
-    height: 120px; /* On force une hauteur pour l'alignement */
-    object-fit: cover; /* Coupe l'image proprement sans la déformer */
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.img-step:hover {
-    transform: scale(1.05); /* Petit effet de zoom au survol */
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .step-desc {
-    font-size: 0.75rem;
-    margin-top: 8px;
-    color: var(--gray);
-    line-height: 1.2;
+    margin-top: 15px;
+    font-weight: 500;
+    color: var(--dark);
 }
 
 /* Version Mobile : on empile les étapes */
