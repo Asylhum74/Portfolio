@@ -75,6 +75,7 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
     padding-bottom: 15px;
     scroll-snap-type: x mandatory; 
     scrollbar-width: thin; /* Pour Firefox */
+    align-items: flex-start
 }
 
 /* Personnalisation de la barre de défilement (Chrome/Safari) */
