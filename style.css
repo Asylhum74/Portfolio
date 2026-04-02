@@ -52,6 +52,9 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
     flex: 1; max-height: 400px; max-width: 400px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
 }
 .card-content-vitrine { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px;  }
+.card-img {
+    padding: 20px;
+}
 
 
 
