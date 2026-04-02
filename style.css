@@ -69,13 +69,15 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 
 /* Card formulaire */
 .step-slider {
-    display: flex;
-    overflow-x: auto;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important; /* Empêche le scroll vertical interne */
     gap: 20px;
-    padding-bottom: 20px; 
-    scroll-snap-type: x mandatory; 
-    scrollbar-width: thin;
-    align-items: flex-start;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    align-items: flex-start !important; /* Aligne en haut, ne force pas la hauteur */
+    min-height: min-content; /* S'adapte au contenu le plus haut */
 }
 
 
@@ -90,22 +92,21 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 
 /* Chaque étape prend 85% de la largeur de la carte */
 .step {
-    flex: 0 0 92%; /* Ne grandit pas, ne rétrécit pas, fait 92% de large */
-    flex-shrink: 0; /* FORCE la largeur, empêche l'écrasement */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Aligne tout en haut */
-    height: auto; /* Laisse la carte s'agrandir selon l'image */
+    flex: 0 0 92% !important;
+    flex-shrink: 0 !important;
+    display: block !important; /* On enlève le flex interne pour tester */
+    height: auto !important; 
+    min-height: 100px;
+    background: #fff;
+    scroll-snap-align: center;
 }
 
 .img-full {
-    width: 100%; 
-    height: auto !important; /* Le !important force le ratio naturel */
-    max-height: none !important; /* On enlève toute limite de hauteur */
-    display: block;
-    object-fit: contain; 
-    flex-shrink: 0;
+    width: 100% !important;
+    height: auto !important; /* Crucial pour garder le ratio */
+    display: block !important;
+    object-fit: contain !important;
+    max-height: none !important; /* On fait sauter toutes les limites */
 }
 
 .step-badge {
