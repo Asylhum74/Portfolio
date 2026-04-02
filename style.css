@@ -68,46 +68,50 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 
 
 /* Card formulaire */
+/* Le conteneur blanc (la carte de la grille) */
+.detail-card {
+    height: auto !important;
+    min-height: 500px;
+    display: block !important; /* On casse le flex du parent pour libérer la hauteur */
+    overflow: hidden;
+}
+
+/* Le bandeau de défilement */
 .step-slider {
     display: flex !important;
     flex-direction: row !important;
     overflow-x: auto !important;
-    overflow-y: hidden !important; /* Empêche le scroll vertical interne */
+    overflow-y: hidden !important;
     gap: 20px;
-    padding: 20px 0;
+    padding: 20px 10px;
+    align-items: flex-start !important; /* IMPORTANT : aligne en haut, laisse pendre le bas */
     scroll-snap-type: x mandatory;
-    align-items: flex-start !important; /* Aligne en haut, ne force pas la hauteur */
-    min-height: min-content; /* S'adapte au contenu le plus haut */
 }
 
-
-/* Personnalisation de la barre de défilement (Chrome/Safari) */
-.step-slider::-webkit-scrollbar {
-    height: 6px;
-}
-.step-slider::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 10px;
-}
-
-/* Chaque étape prend 85% de la largeur de la carte */
+/* Chaque étape (le bloc avec le badge + l'image) */
 .step {
     flex: 0 0 92% !important;
     flex-shrink: 0 !important;
-    display: block !important; /* On enlève le flex interne pour tester */
-    height: auto !important; 
-    min-height: 100px;
+    height: auto !important; /* Laisse la hauteur s'adapter à l'image */
+    display: block !important;
     background: #fff;
     scroll-snap-align: center;
 }
 
+/* L'image elle-même */
 .img-full {
-    width: 100% !important;
-    height: auto !important; /* Crucial pour garder le ratio */
     display: block !important;
+    width: 100% !important;
+    height: auto !important; /* FORCE LE RATIO NATUREL */
+    max-height: none !important; /* AUCUNE LIMITE DE HAUTEUR */
     object-fit: contain !important;
-    max-height: none !important; /* On fait sauter toutes les limites */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
+/* On cache la scrollbar moche pour plus de clarté */
+.step-slider::-webkit-scrollbar { height: 6px; }
+.step-slider::-webkit-scrollbar-thumb { background: #27ae60; border-radius: 10px; }
 
 .step-badge {
     display: inline-block;
