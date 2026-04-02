@@ -78,11 +78,6 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
     align-items: flex-start;
 }
 
-.detail-card {
-    height: auto !important; /* Force la carte à s'agrandir */
-    min-height: 400px; 
-    display: block !important; /* On enlève le flex du parent pour laisser respirer le contenu */
-}
 
 /* Personnalisation de la barre de défilement (Chrome/Safari) */
 .step-slider::-webkit-scrollbar {
