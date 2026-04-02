@@ -43,7 +43,8 @@ h2 { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
 /*Page site vitrine*/
 h1 { font-size: 3.5rem; margin-bottom: 20px; max-width: 800px; }
 h1 span { color: var(--primary); }
-.card-content-vitrine { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 10px; }
+
+.card-content-vitrine { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
 .card-content-vitrine img {max-height: 400px; max-width: 400px; background-size: cover; background-position: center; background-color: #ddd;
 }
 
